@@ -19,3 +19,38 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+}
+/* Backdrop blur fallback */
+@supports not (backdrop-filter: blur(4px)) {
+  .backdrop-blur-sm {
+    background-color: rgba(75, 85, 99, 0.9);
+  }
+}
+
+/* Ensure proper stacking context */
+.container {
+  position: relative;
+  isolation: isolate;
+}
+
+@keyframes appear {
+  from{
+    opacity: 35%;
+  }
+  to{
+    opacity: 5%;
+  }
+}
+
+.picOpa {
+  animation: appear 5s linear;
+  animation-timeline: view();
+}

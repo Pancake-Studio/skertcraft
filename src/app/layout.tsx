@@ -7,6 +7,13 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
+const lineSans = localFont({
+  src: "./fonts/LINESeedSansTH_W_Rg.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -25,11 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={lineSans.className}>{children}</body>
     </html>
   );
 }
