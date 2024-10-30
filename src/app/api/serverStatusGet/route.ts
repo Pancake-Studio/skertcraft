@@ -8,7 +8,7 @@ interface PlayerInfo {
 }
 
 interface ServerData {
-    online: boolean;  // Added missing property
+    online: boolean;
     players: {
         online: number;
         max: number;
@@ -29,7 +29,6 @@ interface PlayerOutput {
 }
 
 function getPlayersList(serverData: ServerData): PlayerOutput[] {
-    // Add null check for players.list
     if (!serverData.players?.list) return [];
     
     return serverData.players.list.map(player => ({
@@ -39,18 +38,16 @@ function getPlayersList(serverData: ServerData): PlayerOutput[] {
 }
 
 export async function GET() {
-    try {
-        if (!process.env.NEXT_PUBLIC_SERVERIP) {
-            throw new Error('Server IP environment variable is not defined');
-        }
+    const serverIP = process.env.NEXT_PUBLIC_SERVERIP || 'localhost';  // Provide a default value
 
+    try {
         const res = await fetch(
-            `https://api.mcstatus.io/v2/status/java/${process.env.NEXT_PUBLIC_SERVERIP}`,
+            `https://api.mcstatus.io/v2/status/java/${serverIP}`,
             {
                 headers: {
                     'Accept': 'application/json',
                 },
-                next: { revalidate: 30 } // Optional: Add cache revalidation
+                next: { revalidate: 30 }
             }
         );
 
@@ -79,11 +76,11 @@ export async function GET() {
     } catch (error) {
         console.error('Server status fetch error:', error);
         
-        // Return a proper error response
         return Response.json(
             { 
                 error: 'Failed to fetch server status',
-                details: error instanceof Error ? error.message : 'Unknown error'
+                details: error instanceof Error ? error.message : 'Unknown error',
+                serverIP: serverIP // Include this for debugging
             },
             { 
                 status: 500,
