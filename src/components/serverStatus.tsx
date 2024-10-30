@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 import { IconArrowDown } from "@tabler/icons-react";
 
 interface PlayerOutput {
@@ -132,17 +131,6 @@ export default function SVStatus() {
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 navigator.clipboard.writeText(player.playerName);
-                                                toast.success(`คัดลอก ${player.playerName} แล้ว!`, {
-                                                    duration: 1500,
-                                                    position: "bottom-center",
-                                                    style: {
-                                                        background: "#333",
-                                                        color: "#fff",
-                                                        padding: "8px 16px",
-                                                        borderRadius: "8px",
-                                                    },
-                                                    icon: "📋",
-                                                });
                                             }}
                                         >
                                             <img
