@@ -21,7 +21,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Skert Craft",
+  title: "SkertCraft Network",
   description: "A new minecraft server",
 };
 
