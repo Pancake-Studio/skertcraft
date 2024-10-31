@@ -1,8 +1,4 @@
-// app/api/serverStatusGet/route.ts
-
-"use client";
-
-export const dynamic = 'auto';
+export const dynamic = 'force-static';
 
 interface PlayerInfo {
     uuid: string;
