@@ -40,7 +40,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="h-screen"></div>
+        <div className="h-[300vh] bg-black"></div>
       {/* </div> */}
     </>
   );
