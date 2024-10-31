@@ -1,4 +1,4 @@
-export const dynamic = 'force-static';
+export const dynamic = 'force-static'
 
 interface PlayerInfo {
     uuid: string;
@@ -22,6 +22,7 @@ interface Result {
     players: PlayerOutput[];
 }
 
+// Define interface for the output format
 interface PlayerOutput {
     playerName: string;
     avatar: string;
@@ -35,15 +36,15 @@ function getPlayersList(serverData: ServerData): PlayerOutput[] {
 }
 
 export async function GET() {
-    const res = await fetch(`https://api.mcstatus.io/v2/status/java/${process.env.NEXT_PUBLIC_SERVERIP}`);
-    const data = await res.json();
+    const res = await fetch(`https://api.mcstatus.io/v2/status/java/${process.env.NEXT_PUBLIC_SERVERIP}`, {})
+    const data = await res.json()
     const playerList = getPlayersList(data);
     const result: Result = {
         isOnline: data.online,
         onlinePlayer: data.players.online,
         maxPLayer: data.players.max,
         players: playerList
-    };
+    }
 
-    return Response.json({ result });
+    return Response.json({ result })
 }
