@@ -2,7 +2,7 @@
 
 "use client";
 
-export const dynamic = 'force-static';
+export const dynamic = 'auto';
 
 interface PlayerInfo {
     uuid: string;
