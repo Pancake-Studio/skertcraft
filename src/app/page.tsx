@@ -1,3 +1,4 @@
+import { Testaos } from "@/components/aos/aos";
 import { Grass, Obsidian, Torch } from "@/components/custom/block";
 import IpServer from "@/components/custom/ip";
 import SVStatus from "@/components/serverStatus";
@@ -40,7 +41,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="h-[300vh] bg-black"></div>
+        <div className="h-[300vh] bg-black">
+          <div className=" absolute flex flex-col items-center justify-center w-full px-4 gap-4">
+            <Testaos/>
+          </div>
+        </div>
       {/* </div> */}
     </>
   );
