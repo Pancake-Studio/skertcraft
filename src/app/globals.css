@@ -55,3 +55,18 @@ body {
   animation: appear 5s linear;
   animation-timeline: view();
 }
+
+@keyframes appearSm {
+  from{
+    opacity: 40%;
+  }
+  to{
+    opacity: 10%;
+  }
+}
+
+.picOpaSm {
+  opacity: 10%;
+  animation: appearSm 5s linear;
+  animation-timeline: view();
+}
