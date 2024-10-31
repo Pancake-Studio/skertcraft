@@ -35,7 +35,7 @@ function getPlayersList(serverData: ServerData): PlayerOutput[] {
     }));
 }
 
-export async function GET() {
+export async function POST() {
     const res = await fetch(`https://api.mcstatus.io/v2/status/java/${process.env.NEXT_PUBLIC_SERVERIP}`, {})
     const data = await res.json()
     const playerList = getPlayersList(data);
