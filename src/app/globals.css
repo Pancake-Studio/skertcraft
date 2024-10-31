@@ -51,6 +51,7 @@ body {
 }
 
 .picOpa {
+  opacity: 5%;
   animation: appear 5s linear;
   animation-timeline: view();
 }
