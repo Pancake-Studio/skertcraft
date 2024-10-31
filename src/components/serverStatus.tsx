@@ -65,7 +65,7 @@ export default function SVStatus() {
     return (
         <div className="container mx-auto p-4 text-white relative isolation">
             <div className="bg-gray-500/25 backdrop-blur-sm rounded-lg shadow-lg p-6 relative z-10">
-                <div className="mb-4 text-[3vw] lg:text-[20px] grid md:flex space-x-5 justify-between">
+                <div className="mb-4 text-[3vw] lg:text-[20px] grid md:flex md:space-x-5 justify-between">
                     <p className="flex items-center">
                         สถานะ:
                         <span
