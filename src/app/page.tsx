@@ -21,7 +21,7 @@ export default function Home() {
             {/* ปรับ animation logo */}
             <div className="opacity-0 translate-y-8 animate-slideUp transition-all duration-1000 ease-out">
               <Image
-                className="w-[65vw] md:w-[40vw] mx-auto [filter:drop-shadow(-120px_-20px_50px_#ec9c24)_drop-shadow(120px_20px_50px_#aa571f91)] md:[filter:drop-shadow(-200px_-100px_150px_#ec9c24)_drop-shadow(200px_100px_100px_#aa571f91)]"
+                className=" w-[65vw] md:w-[40vw] mx-auto [filter:drop-shadow(-120px_-20px_50px_#ec9c24)_drop-shadow(120px_20px_50px_#aa571f91)] md:[filter:drop-shadow(-200px_-100px_150px_#ec9c24)_drop-shadow(200px_100px_100px_#aa571f91)]"
                 src="/minecraft_title2.png"
                 alt="Server Title"
                 width={2022}

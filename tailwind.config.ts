@@ -67,6 +67,14 @@ const config: Config = {
       },
     },
   },
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+  variants: {
+    extend: {
+      backdropFilter: ['responsive'],
+    },
+  },
   plugins: [
     addVariablesForColors,
     function ({ matchUtilities, theme }: any) {

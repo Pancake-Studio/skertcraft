@@ -44,3 +44,10 @@ body {
 .view-timeline-animation {
   animation-timeline: view();
 }
+
+@layer utilities {
+  .backdrop-blur-fix {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+}
