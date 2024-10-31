@@ -41,32 +41,6 @@ body {
   isolation: isolate;
 }
 
-@keyframes appear {
-  from{
-    opacity: 35%;
-  }
-  to{
-    opacity: 5%;
-  }
-}
-
-.picOpa {
-  opacity: 5%;
-  animation: appear 5s linear;
-  animation-timeline: view();
-}
-
-@keyframes appearSm {
-  from{
-    opacity: 40%;
-  }
-  to{
-    opacity: 10%;
-  }
-}
-
-.picOpaSm {
-  opacity: 10%;
-  animation: appearSm 5s linear;
+.view-timeline-animation {
   animation-timeline: view();
 }

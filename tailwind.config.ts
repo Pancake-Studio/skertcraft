@@ -21,6 +21,8 @@ const config: Config = {
         'slideUp': 'slideUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards',
         'slideUp-delay-200': 'slideUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) 200ms forwards',
         'slideUp-delay-400': 'slideUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) 400ms forwards',
+        'appear': 'appear 5s linear',
+        'appear-mobile': 'appear-mobile 5s linear',
         aurora: "aurora 60s linear infinite",
       },
       backdropFilter: {
@@ -28,6 +30,14 @@ const config: Config = {
         'blur': 'blur(8px)',
       },
       keyframes: {
+        appear: {
+        'from': { opacity: '35%' },
+        'to': { opacity: '5%' }
+      },
+      'appear-mobile': {
+        'from': { opacity: '55%' },
+        'to': { opacity: '15%' }
+      },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '0.45' },
