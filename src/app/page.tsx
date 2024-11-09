@@ -52,10 +52,10 @@ export default function Home() {
       </div>
       <div className=" relative h-[100vh] bg-transparent">
         <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-full px-4 gap-4">
-          <div className="flex lg:gap-[40px]">
-            <div  data-aos="fade-up" data-aos-anchor-placement="top-center">
+          <div className="flex flex-col space-y-7 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-[40px]">
+            <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">
               <Image
-                className="w-screen lg:max-w-[600px] rounded-lg border-2 border-dashed lg:p-2"
+                className="w-screen max-w-[300px] lg:max-w-[600px] rounded-lg border-2 border-dashed lg:p-2"
                 src="/into-server.webp"
                 alt="Into Server"
                 width={1050}
@@ -65,14 +65,14 @@ export default function Home() {
             <div
               className="flex items-center"
               data-aos="fade-up"
-              data-aos-anchor-placement="top-center"
+              data-aos-anchor-placement="center-bottom"
               data-aos-delay="300"
             >
               <div className=" flex-col-1">
-                <h2 className="lg:text-[45px] font-bold text-white">
+                <h2 className=" text-[20px] lg:text-[45px] font-bold text-white">
                   สิ่งที่ต้องทำก่อนเข้าเซิร์ฟเวอร์
                 </h2>
-                <h2 className="lg:text-[25px] font-bold text-gray-500">
+                <h2 className="text-[15px] lg:text-[25px] font-bold text-gray-500">
                   เพื่อให้เซิร์ฟเวอร์แสดงผลได้อย่างถูกต้อง
                 </h2>
               </div>
@@ -80,7 +80,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* </div> */}
+      <div className=" relative h-[100vh] bg-transparent">
+
+      </div>
     </>
   );
 }
