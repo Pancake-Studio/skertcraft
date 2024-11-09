@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { AOSProvider } from "@/components/aos/aos";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lineSans.className}>{children}</body>
+      <AOSProvider>
+        <body className={`${lineSans.className} bg-black`}>{children}</body>
+      </AOSProvider>
     </html>
   );
 }

@@ -1,17 +1,13 @@
 "use client"
 
+import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect, useRef, useState } from 'react';
 
-const Testaos = () => {
+export function AOSProvider({ children }: any) {
     useEffect(() => {
         AOS.init();
     }, []);
-    return(
-        <>
-        </>
-    )
-}
 
-export { Testaos };
+    return <>{children}</>;
+}
