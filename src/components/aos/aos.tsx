@@ -6,7 +6,11 @@ import 'aos/dist/aos.css';
 
 export function AOSProvider({ children }: any) {
     useEffect(() => {
-        AOS.init();
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-cubic',
+        });
     }, []);
 
     return <>{children}</>;

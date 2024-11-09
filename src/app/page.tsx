@@ -53,7 +53,7 @@ export default function Home() {
       <div className=" relative h-[100vh] bg-transparent">
         <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-full px-4 gap-4">
           <div className="flex lg:gap-[40px]">
-            <div data-aos="fade-up" data-aos-anchor-placement="center-center">
+            <div  data-aos="fade-up" data-aos-anchor-placement="top-center">
               <Image
                 className="w-screen lg:max-w-[600px] rounded-lg border-2 border-dashed lg:p-2"
                 src="/into-server.webp"
@@ -65,7 +65,7 @@ export default function Home() {
             <div
               className="flex items-center"
               data-aos="fade-up"
-              data-aos-anchor-placement="center-center"
+              data-aos-anchor-placement="top-center"
               data-aos-delay="300"
             >
               <div className=" flex-col-1">
