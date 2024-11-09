@@ -1,5 +1,6 @@
 import { AiOutlineDiscord } from "react-icons/ai";
 import { CiFacebook } from "react-icons/ci";
+import { FaArrowDown } from "react-icons/fa";
 import IpServer from "@/components/custom/ip";
 import SVStatus from "@/components/serverStatus";
 import Image from "next/image";
@@ -8,8 +9,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      {/* <div className="w-full h-screen overflow-hidden dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex justify-center">
-        <div className="absolute pointer-events-none inset-0 flex justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
       <Image
         className="opacity-5 animate-appear view-timeline-animation fixed h-screen w-full object-cover object-center mx-auto [filter:drop-shadow(-120px_-20px_50px_#ec9c24)_drop-shadow(120px_20px_50px_#aa571f91)] md:[filter:drop-shadow(-200px_-100px_150px_#ec9c24)_drop-shadow(200px_100px_100px_#aa571f91)]"
         src="/1159416.webp"
@@ -19,6 +18,9 @@ export default function Home() {
       />
 
       <div className=" relative h-screen w-full flex items-center justify-center bg-transparent">
+        <div className=" text-white absolute left-1/2 -translate-x-1/2 bottom-[50px] animate-bounce ">
+          <FaArrowDown size={25} />
+        </div>
         <div className=" absolute top-[50px] right-[50px] flex gap-[8px] animate-slideUp transition-all duration-1000 ease-out">
           <a href="https://discord.gg/DqN9KRw3mN" className="text-white hover:text-blue-500 transition-colors">
             <AiOutlineDiscord size={40} />
