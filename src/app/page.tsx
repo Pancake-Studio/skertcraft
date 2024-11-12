@@ -4,55 +4,46 @@ import { FaArrowDown } from "react-icons/fa";
 import IpServer from "@/components/custom/ip";
 import SVStatus from "@/components/serverStatus";
 import Image from "next/image";
+import Navbar from "@/components/custom/navbar";
 
 
 export default function Home() {
   return (
     <>
-      <Image
-        className="opacity-5 animate-appear view-timeline-animation fixed h-screen w-full object-cover object-center mx-auto [filter:drop-shadow(-120px_-20px_50px_#ec9c24)_drop-shadow(120px_20px_50px_#aa571f91)] md:[filter:drop-shadow(-200px_-100px_150px_#ec9c24)_drop-shadow(200px_100px_100px_#aa571f91)]"
-        src="/1159416.webp"
-        alt="Server Title"
-        width={2022}
-        height={413}
-      />
-
-      <div className=" relative h-screen w-full flex items-center justify-center bg-transparent">
-        <div className=" text-white absolute left-1/2 -translate-x-1/2 bottom-[50px] animate-bounce ">
-          <FaArrowDown size={25} />
+      <div id="home" className=" relative h-screen w-full flex bg-black">
+        <div className="fixed top-0 z-50 w-full">
+          <div className="relative w-full bg-black py-5 bg-opacity-[40%] backdrop-blur-md">
+            <div className="max-w-7xl mx-auto flex justify-center items-center px-4 md:px-6 lg:px-8">
+              <Navbar />
+            </div>
+          </div>
         </div>
-        <div className=" absolute top-[50px] right-[50px] flex gap-[8px] animate-slideUp transition-all duration-1000 ease-out">
-          <a href="https://discord.gg/DqN9KRw3mN" className="text-white hover:text-blue-500 transition-colors">
-            <AiOutlineDiscord size={40} />
-          </a>
-          <a href="https://www.facebook.com/minecraftsker.sk" className="text-white hover:text-blue-500 transition-colors">
-            <CiFacebook size={40} />
-          </a>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className=" absolute bottom-0 right-0 w-[100rem] ">
+          <Image
+            className=" w-full"
+            src="/mc.png"
+            alt="Into Server"
+            width={1024}
+            height={500}
+          />
         </div>
-        <div className="flex flex-col items-center justify-center w-full px-4 gap-4">
-          {/* ปรับ animation logo */}
-          <div className="opacity-0 translate-y-8 animate-slideUp transition-all duration-1000 ease-out">
-            <Image
-              className=" w-[65vw] md:w-[40vw] mx-auto [filter:drop-shadow(-120px_-20px_50px_#ec9c24)_drop-shadow(120px_20px_50px_#aa571f91)] md:[filter:drop-shadow(-200px_-100px_150px_#ec9c24)_drop-shadow(200px_100px_100px_#aa571f91)]"
-              src="/minecraft_title2.png"
-              alt="Server Title"
-              width={2022}
-              height={413}
-            />
-          </div>
-
-          {/* ปรับ animation IP Server */}
-          <div className="opacity-0 translate-y-8 animate-slideUp-delay-200 transition-all duration-1000 ease-out">
-            <IpServer />
-          </div>
-
-          {/* ปรับ animation Status */}
-          <div className="opacity-0 translate-y-8 animate-slideUp-delay-400 transition-all duration-1000 ease-out">
-            <SVStatus />
-          </div>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="200" className=" absolute top-20 right-96 w-[50rem]">
+          <Image
+            className=" w-full"
+            src="/sky.webp"
+            alt="Into Server"
+            width={1024}
+            height={500}
+          />
+        </div>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="900" className=" absolute top-1/3 left-40 w-[50rem] ">
+          <h1 className="text-[100px]">ยินดีต้อนรับ</h1>
+        </div>
+        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="1100" className=" absolute top-[45vh] left-40 w-[50rem]">
+          <h1 className="text-[60px]">.......</h1>
         </div>
       </div>
-      <div className=" relative h-[100vh] bg-transparent">
+      <div id="howtoplay" className="relative h-screen bg-transparent">
         <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-full px-4 gap-4">
           <div className="flex flex-col space-y-7 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-[40px]">
             <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">

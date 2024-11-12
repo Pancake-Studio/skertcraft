@@ -22,6 +22,7 @@ const config: Config = {
         'slideUp-delay-200': 'slideUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) 200ms forwards',
         'slideUp-delay-400': 'slideUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) 400ms forwards',
         'appear': 'appear 5s linear',
+        'blur': 'blur 5s linear',
         'appear-mobile': 'appear-mobile 5s linear',
         aurora: "aurora 60s linear infinite",
       },
@@ -31,10 +32,14 @@ const config: Config = {
       },
       keyframes: {
         appear: {
-        'from': { opacity: '35%' },
-        'to': { opacity: '5%' }
-      },
-      'appear-mobile': {
+          'from': { opacity: '35%' },
+          'to': { opacity: '5%' }
+        },
+        blur: {
+          'from': { filter: 'blur(0px)' },
+          'to': { filter: 'blur(8px)' }
+        },
+        'appear-mobile': {
         'from': { opacity: '55%' },
         'to': { opacity: '15%' }
       },

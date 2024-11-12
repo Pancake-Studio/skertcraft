@@ -15,6 +15,18 @@ const lineSans = localFont({
   weight: "100 900",
 });
 
+const pixellet = localFont({
+  src: "./fonts/pixellet.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+
+const ZFTERMIN = localFont({
+  src: "./fonts/ZFTERMIN.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -34,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AOSProvider>
-        <body className={`${lineSans.className} bg-black`}>{children}</body>
+        <body className={`${ZFTERMIN.className} bg-[#121212]`}>{children}</body>
       </AOSProvider>
     </html>
   );
