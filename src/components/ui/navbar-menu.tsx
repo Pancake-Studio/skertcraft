@@ -21,6 +21,7 @@ export const MenuItem = ({
     children,
     className,
     href,
+    ...props
 }: {
     setActive: (item: string) => void;
     active: string | null;
@@ -30,7 +31,7 @@ export const MenuItem = ({
     children?: React.ReactNode;
 }) => {
     const content = (
-        <div onMouseEnter={() => setActive(item)} className="relative">
+        <div onMouseEnter={() => setActive(item)} {...props} className="relative">
             <motion.p
                 transition={{ duration: 0.3 }}
                 className={`${className} cursor-pointer hover:opacity-[0.9] hover:text-yellow-500 transition-colors`}
