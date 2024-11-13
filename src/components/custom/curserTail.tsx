@@ -1,4 +1,3 @@
-// components/CursorTail.tsx
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -8,6 +7,7 @@ export default function CursorTail() {
     const cursorRef = useRef<HTMLDivElement>(null);
     const [mounted, setMounted] = useState(false);
     const [isHovering, setIsHovering] = useState(false);
+    const [isClicking, setIsClicking] = useState(false);
     const cursorPos = useRef({ x: 0, y: 0 });
     const currentPos = useRef({ x: 0, y: 0 });
 
@@ -18,6 +18,9 @@ export default function CursorTail() {
             cursorPos.current = { x: e.clientX, y: e.clientY };
         };
 
+        const handleMouseDown = () => setIsClicking(true);
+        const handleMouseUp = () => setIsClicking(false);
+        
         const handleHoverStart = () => setIsHovering(true);
         const handleHoverEnd = () => setIsHovering(false);
 
@@ -28,6 +31,8 @@ export default function CursorTail() {
         });
 
         window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('mousedown', handleMouseDown);
+        window.addEventListener('mouseup', handleMouseUp);
 
         const animate = () => {
             const ease = 0.15;
@@ -39,7 +44,16 @@ export default function CursorTail() {
             currentPos.current.y += dy * ease;
 
             if (cursorRef.current) {
-                cursorRef.current.style.transform = `translate3d(${currentPos.current.x - 4}px, ${currentPos.current.y - 4}px, 0) scale(${isHovering ? 4 : 1})`;
+                let scale = 1;
+                if (isHovering && isClicking) {
+                    scale = 3; // ขนาดเมื่อชี้ปุ่มและคลิกค้าง
+                } else if (isHovering) {
+                    scale = 6; // ขนาดเมื่อชี้ปุ่ม
+                } else if (isClicking) {
+                    scale = 3; // ขนาดเมื่อคลิกค้าง
+                }
+
+                cursorRef.current.style.transform = `translate3d(${currentPos.current.x - 4}px, ${currentPos.current.y - 4}px, 0) scale(${scale})`;
             }
 
             requestAnimationFrame(animate);
@@ -48,12 +62,14 @@ export default function CursorTail() {
 
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('mousedown', handleMouseDown);
+            window.removeEventListener('mouseup', handleMouseUp);
             interactiveElements.forEach(element => {
                 element.removeEventListener('mouseenter', handleHoverStart);
                 element.removeEventListener('mouseleave', handleHoverEnd);
             });
         };
-    }, [isHovering]);
+    }, [isHovering, isClicking]);
 
     if (!mounted) return null;
 
