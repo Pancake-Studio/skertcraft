@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -18,19 +19,21 @@ export const MenuItem = ({
     active,
     item,
     children,
+    className,
     href,
 }: {
     setActive: (item: string) => void;
     active: string | null;
     item: string;
     href?: string;
+    className?: string;
     children?: React.ReactNode;
 }) => {
     const content = (
         <div onMouseEnter={() => setActive(item)} className="relative">
             <motion.p
                 transition={{ duration: 0.3 }}
-                className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white hover:text-yellow-500 transition-colors"
+                className={`${className} cursor-pointer hover:opacity-[0.9] hover:text-yellow-500 transition-colors`}
             >
                 {item}
             </motion.p>
@@ -45,11 +48,11 @@ export const MenuItem = ({
                             <motion.div
                                 transition={transition}
                                 layoutId="active"
-                                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                                className="drop-shadow-[0_0_20px_#a0a0a03d] bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
                             >
                                 <motion.div
                                     layout
-                                    className="w-max h-full p-4"
+                                    className={`w-max h-full p-4`}
                                 >
                                     {children}
                                 </motion.div>

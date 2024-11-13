@@ -1,8 +1,6 @@
-import { AiOutlineDiscord } from "react-icons/ai";
-import { CiFacebook } from "react-icons/ci";
-import { FaArrowDown } from "react-icons/fa";
 import IpServer from "@/components/custom/ip";
 import SVStatus from "@/components/serverStatus";
+import { MdOutlineVideogameAsset } from "react-icons/md";
 import Image from "next/image";
 import Navbar from "@/components/custom/navbar";
 
@@ -10,37 +8,39 @@ import Navbar from "@/components/custom/navbar";
 export default function Home() {
   return (
     <>
-      <div id="home" className=" relative h-screen w-full flex bg-black">
+      <div id="home" className="relative h-screen w-full flex bg-gray-950">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
+          <Image
+            src="/lobby1.webp"
+            alt="alt"
+            width={1920}
+            height={1009}
+            className="object-cover object-center h-full w-full" // เพิ่ม class นี้
+          />
+        </div>
+        <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-[400px] bg-gradient-to-t from-black to-transparent"></div>
+        <div className=" text-[4rem] absolute left-1/2 -translate-x-1/2 bottom-1/3 translate-y-1/2 z-50">
+          <a href="#home">
+            <h1 className="[text-shadow:_0_8px_8px_#000] font-bold">
+              ยินดีต้อนรับเข้าสู่เซิร์ฟเวอร์ของเรา
+            </h1>
+          </a>
+        </div>
+        <div className="flex items-center gap-5 text-[3rem] absolute left-1/2 -translate-x-1/2 bottom-1/3 -translate-y-[-120px] z-50">
+          <div className="flex items-center">
+            <SVStatus />
+          </div>
+          <div className="flex items-center">
+            <IpServer />
+          </div>
+        </div>
         <div className="fixed top-0 z-50 w-full">
-          <div className="relative w-full bg-black py-5 bg-opacity-[40%] backdrop-blur-md">
+          <div className="relative w-full bg-black py-1 bg-opacity-[40%] backdrop-blur-md">
             <div className="max-w-7xl mx-auto flex justify-center items-center px-4 md:px-6 lg:px-8">
               <Navbar />
             </div>
           </div>
-        </div>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" className=" absolute bottom-0 right-0 w-[100rem] ">
-          <Image
-            className=" w-full"
-            src="/mc.png"
-            alt="Into Server"
-            width={1024}
-            height={500}
-          />
-        </div>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="200" className=" absolute top-20 right-96 w-[50rem]">
-          <Image
-            className=" w-full"
-            src="/sky.webp"
-            alt="Into Server"
-            width={1024}
-            height={500}
-          />
-        </div>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="900" className=" absolute top-1/3 left-40 w-[50rem] ">
-          <h1 className="text-[100px]">ยินดีต้อนรับ</h1>
-        </div>
-        <div data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-delay="1100" className=" absolute top-[45vh] left-40 w-[50rem]">
-          <h1 className="text-[60px]">.......</h1>
         </div>
       </div>
       <div id="howtoplay" className="relative h-screen bg-transparent">

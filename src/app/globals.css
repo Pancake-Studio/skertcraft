@@ -54,3 +54,11 @@ body {
     backdrop-filter: blur(8px);
   }
 }
+
+
+@layer components {
+    .circle {
+        @apply h-6 w-6 rounded-full bg-white fixed top-0 left-0 pointer-events-none z-[99999999];
+        mix-blend-mode: difference;
+    }
+}

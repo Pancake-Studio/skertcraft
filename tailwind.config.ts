@@ -1,5 +1,13 @@
 import type { Config } from "tailwindcss";
 import plugin from 'tailwindcss/plugin';
+import typography from '@tailwindcss/typography'
+import { PluginAPI } from "tailwindcss/types/config";
+interface TextShadowConfig {
+  default: string;
+  md: string;
+  lg: string;
+  white: string;
+}
 
 const {
   default: flattenColorPalette,
@@ -14,6 +22,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      textShadow: {
+        'default': '0 2px 4px rgba(0,0,0,0.10)',
+        'md': '0 4px 8px rgba(0,0,0,0.12)',
+        'lg': '0 8px 16px rgba(0,0,0,0.15)',
+        'white': '0 0 8px rgba(255,255,255,0.8)',
+      },
       animation: {
         'fadeIn': 'fadeIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards',
         'fadeIn-delay-200': 'fadeIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) 200ms forwards',
@@ -81,6 +95,19 @@ const config: Config = {
     },
   },
   plugins: [
+    typography,
+    ({ matchUtilities, theme }: PluginAPI) => {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { 
+          values: theme('textShadow'),
+        }
+      )
+    },
     addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(

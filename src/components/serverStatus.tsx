@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { IconArrowDown } from "@tabler/icons-react";
+import { MdOutlineVideogameAsset } from "react-icons/md";
 
 interface PlayerOutput {
     playerName: string;
@@ -67,39 +67,11 @@ export default function SVStatus() {
 
     const { isOnline, onlinePlayer, maxPLayer, players } = data.result;
     return (
-        <div className="container mx-auto p-4 text-white relative isolation bg-gray-500/25 backdrop-blur-sm rounded-lg shadow-lg z-20">
-            <div className="p-6">
-                <div className=" absolute top-1 right-1">
-                    <p className=" text-[10px] text-gray-400">จะรีเฟรชในอีก {countdown}s</p>
-                </div>
-                <div className="mb-4 text-[3vw] lg:text-[20px] grid md:flex md:space-x-5 justify-between">
-                    <p className="flex items-center">
-                        สถานะ:
-                        <span
-                            className={`ml-2 ${isOnline ? "text-green-500" : "text-red-500"
-                                } ${isOnline
-                                    ? "drop-shadow-[0_0_4px_#34ff22]"
-                                    : "drop-shadow-[0_0_50px_#ff1212]"
-                                }`}
-                        >
-                            {isOnline ? "Online" : "Offline"}
-                        </span>
-                    </p>
-                    <div className="flex">
-                        ผู้เล่น:{" "}
-                        <p
-                            className={`${isOnline ? "text-green-500" : "text-red-500"
-                                } ml-2 ${isOnline
-                                    ? "drop-shadow-[0_0_4px_#34ff22]"
-                                    : "drop-shadow-[0_0_50px_#ff1212]"
-                                }`}
-                        >
-                            {onlinePlayer}
-                        </p>
-                        /{maxPLayer}
-                    </div>
-                </div>
+        <a href="#home" >
+            <div className={`${isOnline ? " bg-[#1db53c] border-[#145722]" : "bg-[#b51d1d] border-[#571414]"} px-2 border-r-4 border-b-4 rounded-lg flex gap-3`}>
+                <MdOutlineVideogameAsset />
+                <span className="text-[30px]">{onlinePlayer}/{maxPLayer}</span>
             </div>
-        </div>
+        </a>
     );
 }

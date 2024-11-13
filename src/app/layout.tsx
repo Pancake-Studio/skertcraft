@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { AOSProvider } from "@/components/aos/aos";
+import CursorTail from '@/components/custom/curserTail';
+import BodyContent from "@/components/BodyContent";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -46,7 +48,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AOSProvider>
-        <body className={`${ZFTERMIN.className} bg-[#121212]`}>{children}</body>
+          <body className={`${ZFTERMIN.className} bg-[#121212]`}>{children}</body>
+          <CursorTail />
       </AOSProvider>
     </html>
   );
