@@ -12,7 +12,6 @@ export const ThemeSwitcher = () => {
                     className="p-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-black transition-colors duration-200 flex items-center gap-2"
                 >
                     <FiMoon className="text-gray-800" />
-                    <span>มืด</span>
                 </button>
             ) : (
                 <button
@@ -20,7 +19,6 @@ export const ThemeSwitcher = () => {
                     className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-colors duration-200 flex items-center gap-2"
                 >
                     <FiSun className="text-yellow-300" />
-                    <span>สว่าง</span>
                 </button>
             )}
         </div>
