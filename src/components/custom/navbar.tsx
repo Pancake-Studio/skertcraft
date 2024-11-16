@@ -5,6 +5,7 @@ import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
 import { cn } from "@/lib/utils"
 import { AiOutlineDiscord } from "react-icons/ai";
 import { useState } from "react";
+import { ThemeSwitcher } from "../theme-changer";
 
 export default function Navbar() {
     const navFuncion = [
@@ -43,7 +44,10 @@ export default function Navbar() {
                         height={413}
                     />
                 </a>
-                <NavbarX />
+                <div className=" flex items-center">
+                    <NavbarX />
+                    <ThemeSwitcher />
+                </div>
             </div>
         </>
     );
@@ -84,7 +88,7 @@ function NavbarX({ className }: { className?: string }) {
                         <HoveredLink href="/individual">Facebook</HoveredLink>
                     </div>
                 </MenuItem>
-                <MenuItem  data-aos="fade-right" data-aos-duration="500" data-aos-delay="2750" className="text-white bg-[#1db53c] px-2 hover:text-white rounded-lg text-[20px] items-center text-center border-r-4 border-b-4 border-[#145722]" href="#" setActive={setActive} active={active} item="ร้านค้า">
+                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="2750" className="text-white bg-[#1db53c] px-2 hover:text-white rounded-lg text-[20px] items-center text-center border-r-4 border-b-4 border-[#145722]" href="#" setActive={setActive} active={active} item="ร้านค้า">
                     <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur z-10" />
                     <p>✅ ไปยังร้านค้าของเซิร์ฟเวอร์</p>
                 </MenuItem>

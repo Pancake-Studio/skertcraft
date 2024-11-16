@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react';
+import { toast } from 'sonner'
 
 const IpServer = () => {
     const [copied, setCopied] = useState(false);
@@ -17,26 +18,15 @@ const IpServer = () => {
     };
 
     return (
-        <div className="mt-4 flex items-center justify-center">
-            {/* Add a wrapper div with relative positioning */}
-            <div className="relative">
-                {/* Add a pseudo-element for the backdrop */}
-                <div className="absolute inset-0 bg-gray-500 bg-opacity-35 backdrop-blur-sm rounded-lg" />
-                
-                {/* Main content */}
-                <div className="relative flex items-center space-x-2 px-4 py-2 rounded-lg shadow-md">
-                    <span className="text-white text-[3vw] md:text-[16px] lg:text-[20px] font-mono">
-                        {serverIP}
-                    </span>
-                    <button
-                        className="text-[3vw] md:text-[16px] lg:text-[20px] bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-md text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
-                        onClick={handleCopy}
-                    >
-                        {copied ? 'คัดลอกแล้ว!' : 'คัดลอก'}
-                    </button>
-                </div>
-            </div>
-        </div>
+        <>
+            <span
+                onClick={()=>{handleCopy; toast.success("คัดลอกไอพีแล้ว")}}
+                style={{ cursor: 'pointer' }}
+                className=' hover:text-blue-200 duration-300 text-[30px] flex items-center gap-1'
+            >
+                {serverIP}
+            </span>
+        </>
     );
 };
 

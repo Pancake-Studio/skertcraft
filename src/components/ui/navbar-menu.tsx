@@ -53,7 +53,7 @@ export const MenuItem = ({
                             >
                                 <motion.div
                                     layout
-                                    className={`w-max h-full p-4`}
+                                    className={`w-max text-black dark:text-white h-full p-4`}
                                 >
                                     {children}
                                 </motion.div>

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { AOSProvider } from "@/components/aos/aos";
+import { Providers } from "./providers";
 import CursorTail from '@/components/custom/curserTail';
-import BodyContent from "@/components/BodyContent";
+import { Toaster } from 'sonner'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -46,11 +47,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <AOSProvider>
-          <body className={`${ZFTERMIN.className} bg-[#121212]`}>{children}</body>
-          <CursorTail />
-      </AOSProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${ZFTERMIN.className} dark:bg-[#121212] bg-white `}>
+        <Providers>
+          <Toaster richColors />
+          <AOSProvider>
+            {children}
+            <CursorTail />
+          </AOSProvider>
+        </Providers>
+      </body>
     </html>
   );
 }

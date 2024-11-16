@@ -8,7 +8,7 @@ import Navbar from "@/components/custom/navbar";
 export default function Home() {
   return (
     <>
-      <div id="home" className="relative h-screen w-full flex bg-gray-950">
+      <div id="home" className="relative h-screen w-full flex bg-white dark:bg-gray-950">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
           <Image
             src="/lobby1.webp"
@@ -21,25 +21,22 @@ export default function Home() {
             data-aos-delay="3000"
           />
         </div>
-        <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-[400px] bg-gradient-to-t from-black to-transparent"></div>
-        <div className=" text-[4rem] absolute left-1/2 -translate-x-1/2 bottom-1/3 translate-y-1/2 z-50">
+        <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-white dark:from-black to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-[400px] bg-gradient-to-t from-white dark:from-black to-transparent"></div>
+        <div className="text-[4rem] absolute left-1/2 -translate-x-1/2 bottom-1/3 translate-y-1/2 z-50 w-full text-center">
           <a href="#home">
-            <h1 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className="[text-shadow:_0_8px_8px_#000] font-bold">
+            <h1 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className="[text-shadow:_0_8px_8px_#000] font-bold text-white">
               ยินดีต้อนรับเข้าสู่เซิร์ฟเวอร์ของเรา
             </h1>
           </a>
         </div>
-        <div className="flex items-center gap-5 text-[3rem] absolute left-1/2 -translate-x-1/2 bottom-1/3 -translate-y-[-120px] z-50">
+        <div className="flex justify-center items-center gap-5 text-[3rem] absolute left-1/2 -translate-x-1/2 bottom-1/3 -translate-y-[-120px] z-50 w-full">
           <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className="flex items-center">
             <SVStatus />
           </div>
-          <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className="flex items-center">
-            <IpServer />
-          </div>
         </div>
         <div className="fixed top-0 z-50 w-full">
-          <div className="relative w-full bg-black py-1 bg-opacity-[40%] backdrop-blur-md">
+          <div className="relative w-full bg-white dark:bg-black py-1 dark:bg-opacity-[40%] dark:backdrop-blur-md">
             <div className="max-w-7xl mx-auto flex justify-center items-center px-4 md:px-6 lg:px-8">
               <Navbar />
             </div>

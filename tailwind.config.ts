@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 import plugin from 'tailwindcss/plugin';
 import typography from '@tailwindcss/typography'
 import { PluginAPI } from "tailwindcss/types/config";
+const {nextui} = require("@nextui-org/react");
 interface TextShadowConfig {
   default: string;
   md: string;
@@ -15,10 +16,12 @@ const {
 const svgToDataUri = require("mini-svg-data-uri");
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -95,6 +98,7 @@ const config: Config = {
     },
   },
   plugins: [
+    nextui(),
     typography,
     ({ matchUtilities, theme }: PluginAPI) => {
       matchUtilities(
@@ -134,6 +138,7 @@ const config: Config = {
         }
       );
     },
+
     plugin(({ addUtilities }) => {
       addUtilities({
         '.backdrop-blur-sm': {

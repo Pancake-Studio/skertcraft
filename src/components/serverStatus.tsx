@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { MdOutlineVideogameAsset } from "react-icons/md";
+import IpServer from "./custom/ip";
 
 interface PlayerOutput {
     playerName: string;
@@ -68,9 +69,12 @@ export default function SVStatus() {
     const { isOnline, onlinePlayer, maxPLayer, players } = data.result;
     return (
         <a href="#home" >
-            <div className={`${isOnline ? " bg-[#1db53c] border-[#145722]" : "bg-[#b51d1d] border-[#571414]"} px-2 border-r-4 border-b-4 rounded-lg flex gap-3`}>
-                <MdOutlineVideogameAsset />
-                <span className="text-[30px]">{onlinePlayer}/{maxPLayer}</span>
+            <div className={`${isOnline ? " bg-[#1db53c] border-[#145722]" : "bg-[#b51d1d] border-[#571414]"} px-2 border-r-4 border-b-4 rounded-lg flex gap-10`}>
+                <div className=" gap-3 flex">
+                    <MdOutlineVideogameAsset />
+                    <span className="text-[30px]">{onlinePlayer}/{maxPLayer}</span>
+                </div>
+                <IpServer />
             </div>
         </a>
     );
