@@ -58,25 +58,25 @@ function NavbarX({ className }: { className?: string }) {
     return (
         <>
             <Menu setActive={setActive}>
-                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="1500" className="text-black dark:text-white text-[18px]" href="#home" setActive={setActive} active={active} item="หน้าหลัก">
+                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="1500" className=" text-[18px]" href="#home" setActive={setActive} active={active} item="หน้าหลัก">
                     <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur z-10" />
                     <p>✅ กลับไปยังหน้าหลัก</p>
                 </MenuItem>
-                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="1750" className="text-black dark:text-white text-[18px]" href="#howtoplay" setActive={setActive} active={active} item="วิธีการเล่น">
+                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="1750" className=" text-[18px]" href="#howtoplay" setActive={setActive} active={active} item="วิธีการเล่น">
                     <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur z-10" />
                     <p>✅ วิธีเข้าเซิร์ฟ</p>
                     <p>✅ สิ่งที่ต้องทำหลังเข้าเซิร์ฟ</p>
                 </MenuItem>
-                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="2000" className="text-black dark:text-white text-[18px]" href="#" setActive={setActive} active={active} item="กฏเซิร์ฟเวอร์">
+                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="2000" className=" text-[18px]" href="#" setActive={setActive} active={active} item="กฏเซิร์ฟเวอร์">
                     <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur z-10" />
                     <p>✅ กฏระเบียบที่ผู้เล่นต้องปฏิบัติตาม</p>
                 </MenuItem>
-                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="2250" className="text-black dark:text-white text-[18px]" href="#" setActive={setActive} active={active} item="ทีมงาน">
+                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="2250" className=" text-[18px]" href="#" setActive={setActive} active={active} item="ทีมงาน">
                     <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur z-10" />
                     <p>✅ รายชื่อทีมงาน</p>
                 </MenuItem>
                 <MenuItem
-                    className="text-black dark:text-white text-[18px] relative"
+                    className=" text-[18px] relative"
                     setActive={setActive}
                     active={active}
                     item="คอมมูนิตี้"
