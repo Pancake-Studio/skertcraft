@@ -14,11 +14,15 @@ export default function Navbar() {
             "direct": "#"
         },
         {
-            "title": "วิธีการเล่น",
+            "title": "ข่าวสาร",
             "direct": "#"
         },
         {
             "title": "กฏเซิร์ฟเวอร์",
+            "direct": "#"
+        },
+        {
+            "title": "วิธีการเล่น",
             "direct": "#"
         },
         {
@@ -62,14 +66,18 @@ function NavbarX({ className }: { className?: string }) {
                     <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur z-10" />
                     <p>✅ กลับไปยังหน้าหลัก</p>
                 </MenuItem>
-                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="1750" className=" text-[18px]" href="#howtoplay" setActive={setActive} active={active} item="วิธีการเล่น">
+                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="2000" className=" text-[18px]" href="#news" setActive={setActive} active={active} item="ข่าวสาร">
                     <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur z-10" />
-                    <p>✅ วิธีเข้าเซิร์ฟ</p>
-                    <p>✅ สิ่งที่ต้องทำหลังเข้าเซิร์ฟ</p>
+                    <p>✅ ข่าวสารต่างๆในเซิร์ฟเวอร์</p>
                 </MenuItem>
                 <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="2000" className=" text-[18px]" href="#" setActive={setActive} active={active} item="กฏเซิร์ฟเวอร์">
                     <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur z-10" />
                     <p>✅ กฏระเบียบที่ผู้เล่นต้องปฏิบัติตาม</p>
+                </MenuItem>
+                <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="1750" className=" text-[18px]" href="#howtoplay" setActive={setActive} active={active} item="วิธีการเล่น">
+                    <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur z-10" />
+                    <p>✅ วิธีเข้าเซิร์ฟ</p>
+                    <p>✅ สิ่งที่ต้องทำหลังเข้าเซิร์ฟ</p>
                 </MenuItem>
                 <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="2250" className=" text-[18px]" href="#" setActive={setActive} active={active} item="ทีมงาน">
                     <div className=" absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur z-10" />

@@ -10,6 +10,7 @@ const IpServer = () => {
     const handleCopy = async () => {
         try {
             await navigator.clipboard.writeText(serverIP);
+            toast.success("คัดลอกไอพีแล้ว")
             setCopied(true);
             setTimeout(() => setCopied(false), 1500);
         } catch (err) {
@@ -20,7 +21,7 @@ const IpServer = () => {
     return (
         <>
             <span
-                onClick={()=>{handleCopy; toast.success("คัดลอกไอพีแล้ว")}}
+                onClick={()=>{handleCopy();}}
                 style={{ cursor: 'pointer' }}
                 className=' hover:text-blue-200 duration-300 text-[30px] flex items-center gap-1'
             >
