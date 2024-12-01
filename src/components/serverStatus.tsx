@@ -63,10 +63,10 @@ export default function SVStatus() {
     }
 
     if (!data) {
-        return <div>กำลังโหลดข้อมูล...</div>;
+        return (<div>กำลังโหลดข้อมูล...</div>);
     }
 
-    const { isOnline, onlinePlayer, maxPLayer, players } = data.result;
+    const { isOnline, onlinePlayer=0, maxPLayer=0 } = data.result;
     return (
         <a href="#home" >
             <div className={`${isOnline ? " bg-[#1db53c] border-[#145722]" : "bg-[#b51d1d] border-[#571414]"} px-2 border-r-4 border-b-4 rounded-lg flex gap-10`}>

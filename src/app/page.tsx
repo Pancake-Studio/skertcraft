@@ -2,16 +2,17 @@ import SVStatus from "@/components/serverStatus";
 import Image from "next/image";
 import Navbar from "@/components/custom/navbar";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 function AppleCardsCarousel() {
-  const cards = data.map((card: { src: string, title: string, category: string, content: React.ReactNode }, index: number) => (
+  const cards = newsData.map((card: { src: string, title: string, category: string, content: React.ReactNode }, index: number) => (
     <Card key={card.src} card={card} index={index} />
   ));
 
   return (
     <div className="w-full h-full py-20 ">
       <h2 data-aos="fade-up" data-aos-anchor-placement="center-bottom" className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200  pt-7">
-        ข่าวสารต่างๆในเซิร์ฟเวอร์
+        ข่าวสารต่าง SkerCraft
       </h2>
       <Carousel data-aos="fade-up"
         data-aos-anchor-placement="center-bottom"
@@ -21,7 +22,7 @@ function AppleCardsCarousel() {
   );
 }
 
-const DummyContent = ({content, date}: {content?: string; date?: string}) => {
+const DummyContent = ({ content, date }: { content?: string; date?: string }) => {
   return (
     <>
       {[...new Array(1).fill(1)].map((_, index) => {
@@ -43,7 +44,7 @@ const DummyContent = ({content, date}: {content?: string; date?: string}) => {
   );
 };
 
-const data = [
+const newsData = [
   {
     category: "กิจกรรม",
     title: "ของฟรี!! วันคริสมาส",
@@ -83,6 +84,44 @@ const data = [
   },
 ];
 
+const teamData = [
+  {
+    quote:
+      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+    name: "Sarah Chen",
+    designation: "Product Manager at TechFlow",
+    src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    quote:
+      "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
+    name: "Michael Rodriguez",
+    designation: "CTO at InnovateSphere",
+    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    quote:
+      "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
+    name: "Emily Watson",
+    designation: "Operations Director at CloudScale",
+    src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    quote:
+      "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+    name: "James Kim",
+    designation: "Engineering Lead at DataPro",
+    src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    quote:
+      "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
+    name: "Lisa Thompson",
+    designation: "VP of Technology at FutureNet",
+    src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -114,7 +153,7 @@ export default function Home() {
           </div>
         </div>
         <div className="fixed top-0 z-50 w-full">
-          <div className="relative w-full bg-white dark:bg-black py-1 bg-opacity-[70%] dark:bg-opacity-[40%] backdrop-blur-md">
+          <div className="relative w-full bg-white dark:bg-black py-1 bg-opacity-[70%] dark:bg-opacity-[40%] backdrop-blur-md border-b-1 dark:border-b-0 border-gray-300">
             <div className="max-w-7xl mx-auto flex justify-center items-center px-4 md:px-6 lg:px-8">
               <Navbar />
             </div>
@@ -129,7 +168,7 @@ export default function Home() {
           <div className="flex flex-col space-y-7 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-[40px]">
             <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">
               <Image
-                className="w-screen max-w-[300px] lg:max-w-[600px] rounded-lg border-2 border-dashed lg:p-2"
+                className="w-screen max-w-[300px] lg:max-w-[600px] rounded-lg border-2 border-dashed border-gray-800 dark:border-gray-400 lg:p-2"
                 src="/into-server.webp"
                 alt="Into Server"
                 width={1050}
@@ -143,7 +182,7 @@ export default function Home() {
               data-aos-delay="300"
             >
               <div className=" flex-col-1">
-                <h2 className=" text-[20px] lg:text-[45px] font-bold text-white">
+                <h2 className=" text-[20px] lg:text-[45px] font-bold text-black dark:text-white">
                   สิ่งที่ต้องทำก่อนเข้าเซิร์ฟเวอร์
                 </h2>
                 <h2 className="text-[15px] lg:text-[25px] font-bold text-gray-500">
@@ -152,6 +191,14 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div id="rule" className="relative h-screen bg-transparent">
+
+      </div>
+      <div id="team" className="relative h-screen bg-transparent">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <AnimatedTestimonials testimonials={teamData} />
         </div>
       </div>
     </>

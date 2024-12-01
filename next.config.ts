@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_SERVERIP: process.env.NEXT_PUBLIC_SERVERIP,
   },
   images: {
-    domains: ['assets.aceternity.com'],
+    domains: ['assets.aceternity.com', 'images.unsplash.com'],
   },
   /* config options here */
 };
