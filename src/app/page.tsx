@@ -180,7 +180,9 @@ export default function Home() {
         </div>
       </div>
       <div id="rule" className="relative h-screen bg-transparent">
-
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <h1 className="text-[45px]">ที่นี่ไม่มีกฎ :)</h1>
+        </div>
       </div>
       <div id="team" className="relative h-screen bg-gradient-to-t from-[#868686] to-white dark:to-[#121212]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
