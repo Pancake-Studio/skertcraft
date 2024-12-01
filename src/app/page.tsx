@@ -87,38 +87,24 @@ const newsData = [
 const teamData = [
   {
     quote:
-      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-    name: "Sarah Chen",
-    designation: "Product Manager at TechFlow",
-    src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "คนที่ไม่เคยทำอะไรผิดพลาด คือคนที่ไม่เคยทำอะไรเลย",
+    name: "NallyZ (แอดนิก)",
+    designation: "Developer",
+    src: "/team/nicky.webp",
   },
   {
     quote:
-      "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-    name: "Michael Rodriguez",
-    designation: "CTO at InnovateSphere",
-    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "เป็นหนึ่งในสมาชิกของ เซิร์ฟเวอร์ skercraft อย่างเป็นทางการ \n คำคม : ''ซายหย่อ สูดเด๋''",
+    name: "KreiSer (แอดอะตอม)",
+    designation: "แอดมิน SkerCraft",
+    src: "/team/atom.webp",
   },
   {
     quote:
-      "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-    name: "Emily Watson",
-    designation: "Operations Director at CloudScale",
-    src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    quote:
-      "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-    name: "James Kim",
-    designation: "Engineering Lead at DataPro",
-    src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    quote:
-      "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-    name: "Lisa Thompson",
-    designation: "VP of Technology at FutureNet",
-    src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "หมีตัวนั้นกำลังจับปลา ปลาตัวนั้นกำลังจับกระต่าย กระต่ายตัวนั้นกำลังจับแกะ แกะตัวนั้นกำลังจับมังกร มังกรตัวนั้นกำลังจับเฮ้ยนี่มัน ปืนใหญ่นีโออาร์มสตรอง ไซโคลนเจ็ทอาร์มสตรอง ไม่ใช่เหรอ? เล่นของยากเหมือนกันนะเนี่ย",
+    name: "BotTH48 (แอดหมี)",
+    designation: "Owner/CEO/DEV/LED/FHD/HD4kDigital1080p",
+    src: "/team/non.webp",
   },
 ];
 
@@ -196,7 +182,7 @@ export default function Home() {
       <div id="rule" className="relative h-screen bg-transparent">
 
       </div>
-      <div id="team" className="relative h-screen bg-transparent">
+      <div id="team" className="relative h-screen bg-gradient-to-t from-[#868686] to-white dark:to-[#121212]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <AnimatedTestimonials testimonials={teamData} />
         </div>
