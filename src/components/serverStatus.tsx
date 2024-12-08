@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { MdOutlineVideogameAsset } from "react-icons/md";
+import { IoPersonOutline } from "react-icons/io5";
 import IpServer from "./custom/ip";
 
 interface PlayerOutput {
@@ -18,11 +19,9 @@ interface ServerStatus {
     };
 }
 
-export default function SVStatus() {
+const useServerStatus = () => {
     const [data, setData] = useState<ServerStatus | null>(null);
-    const [countdown, setCountdown] = useState(10);
     const [error, setError] = useState<string | null>(null);
-    const [isPlayersVisible, setIsPlayersVisible] = useState(false);
 
     const fetchData = async () => {
         try {
@@ -36,7 +35,6 @@ export default function SVStatus() {
 
             const result = await response.json();
             setData(result);
-            setCountdown(10);
         } catch (err) {
             setError(err instanceof Error ? err.message : "An error occurred");
         }
@@ -44,38 +42,57 @@ export default function SVStatus() {
 
     useEffect(() => {
         fetchData();
-
-        const intervalId = setInterval(() => {
-            setCountdown((prev) => {
-                if (prev <= 1) {
-                    fetchData();
-                    return 10;
-                }
-                return prev - 1;
-            });
-        }, 1000);
-
+        const intervalId = setInterval(fetchData, 10000);
         return () => clearInterval(intervalId);
     }, []);
 
-    if (error) {
-        return <div className="text-red-500">Error: {error}</div>;
-    }
+    return { data, error };
+};
 
-    if (!data) {
-        return (<div>กำลังโหลดข้อมูล...</div>);
-    }
+export const PlayerOnline = ({ data, error }: { data: ServerStatus | null, error: string | null }) => {
+    if (error) return <div className="text-red-500">Error: {error}</div>;
+    if (!data) return <div>Loading...</div>;
 
-    const { isOnline, onlinePlayer=0, maxPLayer=0 } = data.result;
+    const { onlinePlayer = 0, maxPLayer = 0 } = data.result;
+
     return (
-        <a href="#home" >
-            <div className={`${isOnline ? " bg-[#1db53c] border-[#145722]" : "bg-[#b51d1d] border-[#571414]"} px-2 border-r-4 border-b-4 rounded-lg flex gap-10`}>
-                <div className=" gap-3 flex">
-                    <MdOutlineVideogameAsset />
-                    <span className="text-[30px]">{onlinePlayer}/{maxPLayer}</span>
-                </div>
+        <>
+            <div className="flex gap-3 items-center text-[30px]">
+                <IoPersonOutline/>
+                <span>ผู้เล่นออนไลน์อยู่ {onlinePlayer}/{maxPLayer} คน</span>
+            </div>
+        </>
+    );
+}
+
+export const SVStatus = ({ data, error }: { data: ServerStatus | null, error: string | null }) => {
+    if (error) return <div className="text-red-500">Error: {error}</div>;
+    if (!data) return <div>Loading...</div>;
+
+    return (
+        <div className="flex gap-3 items-center">
+            <MdOutlineVideogameAsset />
+            <div className={`${data.result.isOnline ? " bg-[#1db53c] border-[#145722]" : "bg-[#b51d1d] border-[#571414]"} px-2 border-r-4 border-b-4 text-white rounded-lg flex gap-10`}>
                 <IpServer />
             </div>
-        </a>
+        </div>
     );
+}
+
+export const ServerStatusWrapper = ({ type }: { type: "player" | "sv" }) => {
+    const { data, error } = useServerStatus();
+    if (type === "player") {
+        return (
+            <>
+                <PlayerOnline data={data} error={error} />
+            </>
+        );
+    }
+    if (type === "sv") {
+        return (
+            <>
+                <SVStatus data={data} error={error} />
+            </>
+        );
+    }
 }

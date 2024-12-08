@@ -1,8 +1,9 @@
-import SVStatus from "@/components/serverStatus";
+import { ServerStatusWrapper } from "@/components/serverStatus";
 import Image from "next/image";
 import Navbar from "@/components/custom/navbar";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { ZFTERMIN } from "@/app/fonts";
 
 function AppleCardsCarousel() {
   const cards = newsData.map((card: { src: string, title: string, category: string, content: React.ReactNode }, index: number) => (
@@ -11,7 +12,7 @@ function AppleCardsCarousel() {
 
   return (
     <div className="w-full h-full py-20 ">
-      <h2 data-aos="fade-up" data-aos-anchor-placement="center-bottom" className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200  pt-7">
+      <h2 data-aos="fade-up" data-aos-anchor-placement="center-bottom" className="  max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200  pt-7">
         ข่าวสารต่าง SkerCraft
       </h2>
       <Carousel data-aos="fade-up"
@@ -59,7 +60,7 @@ const newsData = [
   },
   {
     category: "กิจกรรม",
-    title: "ลงดันเจี่ยนรังของแรร์!!",
+    title: "ลงดันเจี่ยนรับของแรร์!!",
     src: "/1159416.webp",
     content: <DummyContent />,
   },
@@ -96,7 +97,7 @@ const teamData = [
     quote:
       "เป็นหนึ่งในสมาชิกของ เซิร์ฟเวอร์ skercraft อย่างเป็นทางการ \n คำคม : ''ซายหย่อ สูดเด๋''",
     name: "KreiSer (แอดอะตอม)",
-    designation: "แอดมิน SkerCraft",
+    designation: "แอมิน SkerCraft",
     src: "/team/atom.webp",
   },
   {
@@ -111,8 +112,8 @@ const teamData = [
 export default function Home() {
   return (
     <>
-      <div id="home" className="relative h-screen w-full flex bg-white dark:bg-gray-950">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
+      <div id="home" className="relative h-screen w-full flex bg-white dark:bg-gray-950 text-black dark:text-white">
+        <div className=" left-1/2 top-[80px] -translate-x-1/2 w-full h-1/2 relative">
           <Image
             src="/lobby1.webp"
             alt="alt"
@@ -123,20 +124,33 @@ export default function Home() {
             data-aos-duration="2000"
             data-aos-delay="3000"
           />
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            data-aos-delay="3000"
+            className="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-white dark:from-black to-transparent"/>
         </div>
-        <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-[#aaa] dark:from-black to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-[400px] bg-gradient-to-t from-[#aaa] dark:from-black to-transparent"></div>
-        <div className="text-[4rem] absolute left-1/2 -translate-x-1/2 bottom-1/3 translate-y-1/2 z-50 w-full text-center">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          data-aos-delay="3000"
+          className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-[#aaa] dark:from-black to-transparent"/>
+        <div className="text-[4rem] absolute left-20 bottom-1/3 translate-y-1/2 z-50 w-[90%] flex flex-col gap-4">
           <a href="#home">
-            <h1 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className="[text-shadow:_0_8px_8px_#000] font-bold text-white">
-              ยินดีต้อนรับเข้าสู่เซิร์ฟเวอร์ของเรา
+            <h1 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" 
+                className={`${ZFTERMIN.className} text-orange-600 text-9xl font-bold`}>
+              SkerCraft
             </h1>
+            <h2 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className=" text-orange-600 text-2xl font-bold">
+              ยินดีต้อนรับเข้าสู่เซิร์ฟเวอร์ไมน์คราฟต์ของพวกเรา
+            </h2>
+            <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className="flex items-center justify-between mt-20 w-[90%] px-10">
+              <ServerStatusWrapper type="sv" />
+              <ServerStatusWrapper type="player" />
+            </div>
           </a>
         </div>
         <div className="flex justify-center items-center gap-5 text-[3rem] absolute left-1/2 -translate-x-1/2 bottom-1/3 -translate-y-[-120px] z-50 w-full">
-          <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className="flex items-center">
-            <SVStatus />
-          </div>
         </div>
         <div className="fixed top-0 z-50 w-full">
           <div className="relative w-full bg-white dark:bg-black py-1 bg-opacity-[70%] dark:bg-opacity-[40%] backdrop-blur-md border-b-1 dark:border-b-0 border-gray-300">

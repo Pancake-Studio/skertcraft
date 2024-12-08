@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${ZFTERMIN.className} dark:bg-[#121212] bg-white `}>
+      <body className={`${lineSans.className} dark:bg-[#121212] bg-white `}>
         <Providers>
           <Toaster richColors />
           <AOSProvider>

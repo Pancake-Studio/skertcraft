@@ -23,7 +23,7 @@ const IpServer = () => {
             <span
                 onClick={()=>{handleCopy();}}
                 style={{ cursor: 'pointer' }}
-                className=' hover:text-blue-200 duration-300 text-[30px] flex items-center gap-1'
+                className=' hover:text-orange-200 duration-300 text-[30px] flex items-center gap-1'
             >
                 {serverIP}
             </span>

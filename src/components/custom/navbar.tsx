@@ -111,7 +111,7 @@ function NavbarX({ className }: { className?: string }) {
                     <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur z-10" />
                     <div className="flex items-center gap-2">
                         <AiOutlineDiscord className="text-2xl" />
-                        <p>ขณะนี้มีสมาชิก {3}</p>
+                        <p>เข้าสู่ Discord ของเซิร์ฟเวอร์</p>
                     </div>
                 </MenuItem>
             </Menu>
