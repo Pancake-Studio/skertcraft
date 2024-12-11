@@ -58,7 +58,7 @@ const newsData = [
     category: "ข่าวสาร",
     title: "แอดมินมีการแกล้งผู้เล่นในเซิร์ฟเวอร์",
     src: "/lobby2.webp",
-    content: <DummyContent content="มีแอดมินแกล้งผู้เล่นจนเลิกเล่น" date="23/12/2023" />,
+    content: <DummyContent content="มีแอดมินแกล้งผู้เล่นจ��เลิกเล่น" date="23/12/2023" />,
   },
   {
     category: "กิจกรรม",
@@ -97,7 +97,7 @@ const teamData = [
   },
   {
     quote:
-      "เป็นหนึ่งในสมาชิกของ เซิร์ฟเวอร์ skercraft อย่างเป็นทางการ \n คำคม : ''ซายหย่อ สูดเด๋''",
+      "เป็นหนึ่งในสมาชิกของ เซิร์ฟเวอร์ skercraft อย่างเป็นทางการ \n : ''ซายหย่อ สูดเด๋''",
     name: "KreiSer (แอดอะตอม)",
     designation: "แอมิน SkerCraft",
     src: "/team/atom.webp",
@@ -204,8 +204,8 @@ export default function Home() {
           <h1 className="text-[45px]">ที่นี่ไม่มีกฎ :)</h1>
         </div>
       </div>
-      <div id="team" className="relative h-screen bg-gradient-to-t ">
-        <div className="relative flex justify-center items-center min-h-screen">
+      <div id="team" className="relative bg-gradient-to-t py-20">
+        <div className="relative flex justify-center items-center px-6">
           <AnimatedTestimonials testimonials={teamData} />
         </div>
       </div>
