@@ -4,6 +4,7 @@ import Navbar from "@/components/custom/navbar";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { ZFTERMIN } from "@/app/fonts";
+import Footer from "@/components/custom/footer";
 
 function AppleCardsCarousel() {
   const cards = newsData.map((card: { src: string, title: string, category: string, content: React.ReactNode }, index: number) => (
@@ -112,7 +113,7 @@ const teamData = [
 export default function Home() {
   return (
     <>
-      <div id="home" className="relative h-screen w-full flex bg-white dark:bg-gray-950 text-black dark:text-white">
+      <div id="home" className="relative h-screen w-full flex text-black dark:text-white">
         <div className=" left-1/2 top-[80px] -translate-x-1/2 w-full h-1/2 relative">
           <Image
             src="/lobby1.webp"
@@ -198,11 +199,12 @@ export default function Home() {
           <h1 className="text-[45px]">ที่นี่ไม่มีกฎ :)</h1>
         </div>
       </div>
-      <div id="team" className="relative h-screen bg-gradient-to-t from-[#868686] to-white dark:to-[#121212]">
+      <div id="team" className="relative h-screen bg-gradient-to-t ">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <AnimatedTestimonials testimonials={teamData} />
         </div>
       </div>
+      <Footer />
     </>
   );
 }
