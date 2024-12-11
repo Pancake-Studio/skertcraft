@@ -138,7 +138,7 @@ export default function Home() {
               SkerCraft
             </h1>
             <h2 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" 
-              className="text-orange-200 text-xs md:text-xl lg:text-2xl font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] transition-all duration-300 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+              className="text-orange-200 text-xs md:text-xl lg:text-2xl font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] transition-all duration-300 bg-gradient-to-r from-green-200 to-blue-200 bg-clip-text text-transparent">
               ยินดีต้อนรับเข้าสู่เซิร์ฟเวอร์ไมน์คราฟต์ของพวกเรา
             </h2>
           </div>
