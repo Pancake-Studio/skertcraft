@@ -76,20 +76,3 @@ body {
   transition: background-color var(--transition-duration) ease-in-out,
               color var(--transition-duration) ease-in-out;
 }
-
-/* เพิ่ม CSS classes สำหรับจัดการ z-index */
-.z-layer-base {
-  z-index: 0;
-}
-
-.z-layer-content {
-  z-index: 10;
-}
-
-.z-layer-nav {
-  z-index: 50;
-}
-
-.z-layer-overlay {
-  z-index: 100;
-}

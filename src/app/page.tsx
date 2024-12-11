@@ -58,7 +58,7 @@ const newsData = [
     category: "ข่าวสาร",
     title: "แอดมินมีการแกล้งผู้เล่นในเซิร์ฟเวอร์",
     src: "/lobby2.webp",
-    content: <DummyContent content="มีแอดมินแกล้งผู้เล่นจเลิกเล่น" date="23/12/2023" />,
+    content: <DummyContent content="มีแอดมินแกล้งผู้เล่นจนเลิกเล่น" date="23/12/2023" />,
   },
   {
     category: "กิจกรรม",
@@ -97,7 +97,7 @@ const teamData = [
   },
   {
     quote:
-      "เป็นหนึ่งในสมาชิกของ เซิร์ฟเวอร์ skercraft อย่างเป็นทางการ \n : ''ซายหย่อ สูดเด๋''",
+      "เป็นหนึ่งในสมาชิกของ เซิร์ฟเวอร์ skercraft อย่างเป็นทางการ \n คำคม : ''ซายหย่อ สูดเด๋''",
     name: "KreiSer (แอดอะตอม)",
     designation: "แอมิน SkerCraft",
     src: "/team/atom.webp",
@@ -116,7 +116,7 @@ export default function Home() {
     <>
       <SnowParticles />
       <div id="home" className="relative h-screen w-full flex text-black bg-[#ddd] dark:bg-black dark:text-white">
-        <div className=" left-1/2 top-[80px] -translate-x-1/2 w-full h-1/2 relative z-layer-base">
+        <div className=" left-1/2 top-[80px] -translate-x-1/2 w-full h-1/2 relative">
           <Image
             src="/lobby1.webp"
             alt="alt"
@@ -138,8 +138,8 @@ export default function Home() {
               SkerCraft
             </h1>
             <h2 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" 
-              className="text-orange-200 text-xs md:text-xl lg:text-2xl font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] transition-all duration-300 bg-gradient-to-r from-green-200 to-blue-200 bg-clip-text text-transparent">
-              ยินดีต้อนรับเข้าสู่เซิร์ฟเวอร์ไมน์คราฟตของพวกเรา
+              className="text-orange-200 text-xs md:text-xl lg:text-2xl font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] transition-all duration-300 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+              ยินดีต้อนรับเข้าสู่เซิร์ฟเวอร์ไมน์คราฟต์ของพวกเรา
             </h2>
           </div>
         </div>
@@ -204,14 +204,12 @@ export default function Home() {
           <h1 className="text-[45px]">ที่นี่ไม่มีกฎ :)</h1>
         </div>
       </div>
-      <div id="team" className="relative min-h-screen pb-24 bg-gradient-to-t">
+      <div id="team" className="relative h-screen bg-gradient-to-t ">
         <div className="relative flex justify-center items-center min-h-screen">
           <AnimatedTestimonials testimonials={teamData} />
         </div>
       </div>
-      <div className="mt-[10px]">
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }
