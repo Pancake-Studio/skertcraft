@@ -57,7 +57,7 @@ export const PlayerOnline = ({ data, error }: { data: ServerStatus | null, error
 
     return (
         <>
-            <div className="flex gap-3 items-center text-[30px]">
+            <div className="flex gap-3 items-center text-[30px] text-xl md:text-3xl lg:text-4xl">
                 <IoPersonOutline/>
                 <span>ผู้เล่นออนไลน์อยู่ {onlinePlayer}/{maxPLayer} คน</span>
             </div>

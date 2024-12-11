@@ -21,6 +21,7 @@ export const MenuItem = ({
     children,
     className,
     href,
+    onClick,
     ...props
 }: {
     setActive: (item: string) => void;
@@ -29,12 +30,13 @@ export const MenuItem = ({
     href?: string;
     className?: string;
     children?: React.ReactNode;
+    onClick?: () => void;
 }) => {
     const content = (
-        <div onMouseEnter={() => setActive(item)} {...props} className="relative">
+        <div onClick={onClick} onMouseEnter={() => setActive(item)} {...props} className="relative">
             <motion.p
                 transition={{ duration: 0.3 }}
-                className={`${className} cursor-pointer text-black dark:text-white hover:opacity-[0.9] hover:text-yellow-500 transition-colors`}
+                className={`${className} cursor-pointer text-black dark:text-white hover:opacity-[0.9] hover:text-yellow-500 transition-colors md:text-[14px] lg:text-[14px]`}
             >
                 {item}
             </motion.p>
@@ -43,6 +45,7 @@ export const MenuItem = ({
                     initial={{ opacity: 0, scale: 0.85, y: 10 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={transition}
+                    className="z-50"
                 >
                     {active === item && (
                         <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">

@@ -80,6 +80,7 @@ export default function CursorTail() {
                 fixed left-0 top-0 pointer-events-none z-[99999999] mix-blend-difference
                 w-2 h-2 rounded-full bg-white
                 transition-transform duration-500 ease-out
+                hidden lg:block
             `}
             style={{
                 willChange: 'transform',

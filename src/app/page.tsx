@@ -5,6 +5,7 @@ import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { ZFTERMIN } from "@/app/fonts";
 import Footer from "@/components/custom/footer";
+import SnowParticles from "@/components/ui/snow-particles";
 
 function AppleCardsCarousel() {
   const cards = newsData.map((card: { src: string, title: string, category: string, content: React.ReactNode }, index: number) => (
@@ -113,7 +114,8 @@ const teamData = [
 export default function Home() {
   return (
     <>
-      <div id="home" className="relative h-screen w-full flex text-black dark:text-white">
+      <SnowParticles />
+      <div id="home" className="relative h-screen w-full flex text-black bg-[#ddd] dark:bg-black dark:text-white">
         <div className=" left-1/2 top-[80px] -translate-x-1/2 w-full h-1/2 relative">
           <Image
             src="/lobby1.webp"
@@ -129,23 +131,26 @@ export default function Home() {
             data-aos="fade-up"
             data-aos-duration="2000"
             data-aos-delay="3000"
-            className="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-white dark:from-black to-transparent"/>
+            className="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-white dark:from-black to-transparent" />
+          <div className="fixed left-1/2 top-[100px] -translate-x-1/2 -translate-y-1/2 w-full h-1/2 flex flex-col justify-center items-center">
+            <h1 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000"
+              className={`${ZFTERMIN.className} text-white text-5xl md:text-7xl lg:text-9xl font-bold drop-shadow-[0_5px_6px_rgba(0,0,0,0.8)] transition-all duration-300`}>
+              SkerCraft
+            </h1>
+            <h2 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" 
+              className="text-orange-200 text-xs md:text-xl lg:text-2xl font-bold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] transition-all duration-300 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+              ยินดีต้อนรับเข้าสู่เซิร์ฟเวอร์ไมน์คราฟต์ของพวกเรา
+            </h2>
+          </div>
         </div>
         <div
           data-aos="fade-up"
           data-aos-duration="2000"
           data-aos-delay="3000"
-          className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-[#aaa] dark:from-black to-transparent"/>
-        <div className="text-[4rem] absolute left-20 bottom-1/3 translate-y-1/2 z-50 w-[90%] flex flex-col gap-4">
-          <a href="#home">
-            <h1 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" 
-                className={`${ZFTERMIN.className} text-orange-600 text-9xl font-bold`}>
-              SkerCraft
-            </h1>
-            <h2 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className=" text-orange-600 text-2xl font-bold">
-              ยินดีต้อนรับเข้าสู่เซิร์ฟเวอร์ไมน์คราฟต์ของพวกเรา
-            </h2>
-            <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className="flex items-center justify-between mt-20 w-[90%] px-10">
+          className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-[#aaa] dark:from-black to-transparent" />
+        <div className=" text-3xl md:text-5xl lg:text-6xl absolute left-1/2 bottom-1/3 -translate-x-1/2 translate-y-1/2 z-50 w-[90%] flex flex-col gap-4">
+          <a href="#home" className="w-full">
+            <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className="flex flex-col md:flex-row items-center justify-between gap-8 mt-20 w-full px-10">
               <ServerStatusWrapper type="sv" />
               <ServerStatusWrapper type="player" />
             </div>
@@ -200,7 +205,7 @@ export default function Home() {
         </div>
       </div>
       <div id="team" className="relative h-screen bg-gradient-to-t ">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="relative flex justify-center items-center min-h-screen">
           <AnimatedTestimonials testimonials={teamData} />
         </div>
       </div>
