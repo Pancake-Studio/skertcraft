@@ -12,7 +12,7 @@ export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <>
+        <header className="fixed top-0 w-full z-layer-nav">
             <div className="flex justify-center w-full">
                 <div className="flex items-center w-full max-w-[1600px] justify-between px-4 md:px-8 lg:px-[50px] py-4">
                     <a href="#home">
@@ -49,7 +49,7 @@ export default function Navbar() {
                     </div>
                 </div>
             )}
-        </>
+        </header>
     );
 };
 
