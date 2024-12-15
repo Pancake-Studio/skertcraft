@@ -132,7 +132,7 @@ export default function Home() {
             data-aos-duration="2000"
             data-aos-delay="3000"
             className="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-white dark:from-black to-transparent" />
-          <div className="fixed left-1/2 top-[100px] -translate-x-1/2 -translate-y-1/2 w-full h-1/2 flex flex-col justify-center items-center">
+          <div className="fixed left-1/2 top-[200px] -translate-x-1/2 -translate-y-1/2 w-full h-1/2 flex flex-col justify-center items-center">
             <h1 data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000"
               className={`${ZFTERMIN.className} text-white text-5xl md:text-7xl lg:text-9xl font-bold drop-shadow-[0_5px_6px_rgba(0,0,0,0.8)] transition-all duration-300`}>
               SkerCraft
@@ -151,7 +151,7 @@ export default function Home() {
         <div className=" text-3xl md:text-5xl lg:text-6xl absolute left-1/2 bottom-1/3 -translate-x-1/2 translate-y-2/3 z-50 w-[90%] flex flex-col gap-4">
           <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="3000" className="flex flex-col md:flex-row items-center justify-between gap-8 mt-20 w-full px-10">
             <div className="max-w-[800px] items-center text-start">
-              <h3 className="text-xs md:text-1xl lg:text-2xl font-bold leading-relaxed overflow-y-auto max-h-[180px] lg:max-h-[250px] pr-4 scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-orange-100 dark:scrollbar-track-orange-900 bg-orange-400/25 p-4 rounded-lg">
+              <h3 className="text-xs md:text-1xl lg:text-2xl font-bold leading-relaxed overflow-y-auto max-h-[180px] lg:max-h-[250px] pr-4 scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-orange-100 dark:scrollbar-track-orange-900 bg-orange-400/25 p-4 rounded-xl">
                 ยินดีต้อนรับสู่เซิร์ฟเวอร์ที่ผสมผสานระหว่าง Survival และ RPG อย่างลงตัว! เซิร์ฟเวอร์ของเรายังคงรักษาแก่นแท้ของ Minecraft ไว้ แต่เพิ่มความท้าทายด้วยระบบ RPG ที่จะทำให้การผจญภัยของคุณสนุกยิ่งขึ้น<br /><br />
                 🏰 สำรวจโลกที่แบ่งเป็น:<br />
                 • โลกสร้างบ้าน - สร้างถิ่นฐานและฟาร์มของคุณ<br />
@@ -188,7 +188,7 @@ export default function Home() {
           <div className="flex flex-col space-y-7 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-[40px]">
             <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">
               <Image
-                className="w-screen max-w-[300px] lg:max-w-[600px] rounded-lg border-2 border-dashed border-gray-800 dark:border-gray-400 lg:p-2"
+                className="w-screen max-w-[300px] lg:max-w-[600px] rounded-xl border-2 border-dashed border-gray-800 dark:border-gray-400 lg:p-2"
                 src="/into-server.webp"
                 alt="Into Server"
                 width={1050}
@@ -220,7 +220,7 @@ export default function Home() {
               <h2 data-aos="fade-up" data-aos-anchor-placement="center-bottom" className="mb-5 text-xl md:text-3xl lg:text-5xl font-bold text-neutral-800 dark:text-neutral-200 pt-7">
                 กฎของเซิร์ฟเวอร์ต่างๆ
               </h2>
-              <h3 className="text-xs md:text-base lg:text-xl font-bold leading-relaxed overflow-y-auto max-h-[300px] lg:max-h-[500px] w-full pr-4 scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-orange-100 dark:scrollbar-track-orange-900 bg-orange-400/25 p-4 rounded-lg">
+              <h3 className="text-xs md:text-base lg:text-xl font-bold leading-relaxed overflow-y-auto max-h-[300px] lg:max-h-[500px] w-full pr-4 scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-orange-100 dark:scrollbar-track-orange-900 bg-orange-400/25 p-4 rounded-xl">
                 1.ห้ามผู้เล่นสร้างความวุนวายภายในเซิร์ฟเวอร์ทุกกรณี<br /><br />
 
                 2.ห้ามใช้ถอยคำ ดูหมิ่น,เหยียด,ข่มขู่,ขัดขื่นใจ,ว่าร้าย ในทางที่โจมตีผู้อื่นที่ทำให้เสียความรู้สึก<br /><br />
@@ -253,7 +253,7 @@ export default function Home() {
               </h3>
             </div>
             <div className="w-full lg:w-1/3 mt-6 lg:mt-0">
-              <h2 className="text-xs md:text-base lg:text-xl font-bold leading-relaxed bg-orange-400/25 p-6 rounded-lg">
+              <h2 className="text-xs md:text-base lg:text-xl font-bold leading-relaxed bg-orange-400/25 p-6 rounded-xl">
                 <div className="text-lg md:text-2xl lg:text-3xl mb-4 text-orange-600 dark:text-orange-400">บทลงโทษภายในเซิร์ฟเวอร์</div>
 
                 <div className="space-y-4">
