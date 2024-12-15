@@ -89,7 +89,7 @@ function NavbarX({ className }: { className?: string }) {
                     <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-green-600 opacity-15 blur pointer-events-none" />
                     <div className="flex flex-col space-y-4 text-sm relative z-30">
                         <HoveredLink href="https://discord.gg/DqN9KRw3mN">Discord</HoveredLink>
-                        <HoveredLink href="/individual">Facebook</HoveredLink>
+                        <HoveredLink href="https://www.facebook.com/minecraftsker.sk">Facebook</HoveredLink>
                     </div>
                 </MenuItem>
                 <MenuItem data-aos="fade-right" data-aos-duration="500" data-aos-delay="2750" className="text-white bg-[#1db53c] px-2 hover:text-white rounded-lg text-[20px] items-center text-center border-r-4 border-b-4 border-[#145722]" href="#" setActive={setActive} active={active} item="ร้านค้า">
