@@ -76,3 +76,33 @@ body {
   transition: background-color var(--transition-duration) ease-in-out,
               color var(--transition-duration) ease-in-out;
 }
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f97316; /* orange-500 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c; /* orange-600 */
+}
+
+/* Dark mode scrollbar track */
+.dark ::-webkit-scrollbar-track {
+  background: #7c2d12; /* orange-900 */
+  border-radius: 4px;
+}
+
+/* Light mode scrollbar track */
+::-webkit-scrollbar-track {
+  background: #ffedd5; /* orange-100 */
+  border-radius: 4px;
+}
