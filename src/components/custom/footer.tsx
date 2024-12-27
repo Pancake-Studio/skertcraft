@@ -12,16 +12,16 @@ export default function Footer() {
       <div className=" relative bg-orange-700 h-[100px] ">
         <div className=" absolute right-3 md:right-10 top-1/2 -translate-y-1/2 flex flex-col items-center">
           <div className="flex items-center gap-2">
-            <a href="https://discord.gg/skercraft">
+            <a href="https://discord.gg/skercraft" data-cursor-scale="4">
               <FaDiscord className="text-white text-xs md:text-[20px]" />
             </a>
-            <a href="https://tiktok.com/@skercraft">
+            <a href="https://tiktok.com/@skercraft" data-cursor-scale="4">
               <FaTiktok className="text-white text-xs md:text-[20px]" />
             </a>
-            <a href="https://facebook.com/skercraft">
+            <a href="https://facebook.com/skercraft" data-cursor-scale="4">
               <FaFacebook className="text-white text-xs md:text-[20px]" />
             </a>
-            <a href="https://youtube.com/@skercraft">
+            <a href="https://youtube.com/@skercraft" data-cursor-scale="4">
               <FaYoutube className="text-white text-xs md:text-[20px]" />
             </a>
           </div>
@@ -30,8 +30,8 @@ export default function Footer() {
           </h1>
         </div>
         <div className="flex flex-col gap-2 justify-center items-center h-full">
-          <h1 className="text-white text-xs md:text-[20px]">เราไม่มีส่วนเกี่ยวข้องกับ Mojang AB</h1>
-          <h1 className="text-white text-xs md:text-[20px]">Copyright © 2024</h1>
+          <h1 data-cursor-scale="8" className="text-white text-xs md:text-[20px]">เราไม่มีส่วนเกี่ยวข้องกับ Mojang AB</h1>
+          <h1 data-cursor-scale="8" className="text-white text-xs md:text-[20px]">Copyright © 2024</h1>
         </div>
       </div>
     </>

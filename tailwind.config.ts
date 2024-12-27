@@ -17,12 +17,17 @@ const svgToDataUri = require("mini-svg-data-uri");
 
 const config: Config = {
   darkMode: 'class',
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: {
+    relative: true,
+    transform: (content) => content.replace(/taos:/g, ''),
+    files: [
+      "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+      "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+      './src/*.{html,js}', 
+    ],
+  },
   theme: {
     extend: {
       textShadow: {
@@ -97,7 +102,13 @@ const config: Config = {
       backdropFilter: ['responsive'],
     },
   },
+  safelist: [
+    '!duration-[0ms]',
+    '!delay-[0ms]',
+    'html.js :where([class*="taos:"]:not(.taos-init))'
+  ],
   plugins: [
+    require('taos/plugin'),
     nextui(),
     typography,
     ({ matchUtilities, theme }: PluginAPI) => {

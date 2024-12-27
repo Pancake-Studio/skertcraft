@@ -42,16 +42,14 @@ const useServerStatus = () => {
 
     useEffect(() => {
         fetchData();
-        const intervalId = setInterval(fetchData, 10000);
-        return () => clearInterval(intervalId);
     }, []);
 
     return { data, error };
 };
 
 export const PlayerOnline = ({ data, error }: { data: ServerStatus | null, error: string | null }) => {
-    if (error) return <div className="text-red-500">Error: {error}</div>;
-    if (!data) return <div>Loading...</div>;
+    if (error) return <div className="text-red-500">เกิดข้อผิดพลาดขึ้น โปรดรีหน้าเว็บ</div>;
+    if (!data) return <div className=" py-1 px-7 bg-gray-200 text-gray-200 dark:text-gray-900 dark:bg-gray-900 rounded-sm"> ผู้เล่นออนไลน์อยู่ คน</div>;
 
     const { onlinePlayer = 0, maxPLayer = 0 } = data.result;
 
@@ -66,9 +64,8 @@ export const PlayerOnline = ({ data, error }: { data: ServerStatus | null, error
 }
 
 export const SVStatus = ({ data, error }: { data: ServerStatus | null, error: string | null }) => {
-    if (error) return <div className="text-red-500">Error: {error}</div>;
-    if (!data) return <div>Loading...</div>;
-
+    if (error) return <div className="text-red-500">เกิดข้อผิดพลาดขึ้น โปรดรีหน้าเว็บ</div>;
+    if (!data) return <div className=" py-1 px-7 bg-gray-200 text-gray-200 dark:text-gray-900 dark:bg-gray-900 rounded-sm">play.skercraft.com</div>;
     return (
         <div className="flex gap-3 items-center">
             <MdOutlineVideogameAsset />

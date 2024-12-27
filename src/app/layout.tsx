@@ -5,6 +5,8 @@ import { AOSProvider } from "@/components/aos/aos";
 import { Providers } from "./providers";
 import CursorTail from '@/components/custom/curserTail';
 import { Toaster } from 'sonner'
+import Navbar from "@/components/custom/navbar";
+import Footer from "@/components/custom/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,11 +50,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lineSans.className} dark:bg-[#121212] bg-white `}>
+      <body className={`${lineSans.className} dark:bg-black bg-white `}>
         <Providers>
           <Toaster richColors />
           <AOSProvider>
-            {children}
+            <div className="fixed top-0 z-[60] w-full">
+              <div className="relative w-full bg-white dark:bg-black py-1 bg-opacity-[70%] dark:bg-opacity-[40%] backdrop-blur-md border-b-1 dark:border-b-0 border-gray-300">
+                <div className="max-w-7xl mx-auto flex justify-center items-center px-4 md:px-6 lg:px-8">
+                  <Navbar />
+                </div>
+              </div>
+            </div>
+            <div className=" mt-28">
+              {children}
+              <Footer />
+            </div>
             <CursorTail />
           </AOSProvider>
         </Providers>

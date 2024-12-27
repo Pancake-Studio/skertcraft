@@ -8,6 +8,7 @@ export default function CursorTail() {
     const [mounted, setMounted] = useState(false);
     const [isHovering, setIsHovering] = useState(false);
     const [isClicking, setIsClicking] = useState(false);
+    const [hoverScale, setHoverScale] = useState(1);
     const cursorPos = useRef({ x: 0, y: 0 });
     const currentPos = useRef({ x: 0, y: 0 });
 
@@ -21,12 +22,25 @@ export default function CursorTail() {
         const handleMouseDown = () => setIsClicking(true);
         const handleMouseUp = () => setIsClicking(false);
         
-        const handleHoverStart = () => setIsHovering(true);
-        const handleHoverEnd = () => setIsHovering(false);
+        const handleHoverStart = (e: MouseEvent) => {
+            const target = e.currentTarget as HTMLElement;
+            const cursorScale = target.getAttribute('data-cursor-scale');
+            
+            if (cursorScale) {
+                setHoverScale(parseFloat(cursorScale));
+                setIsHovering(true);
+            }
+        };
 
-        const interactiveElements = document.querySelectorAll('a, button, input, [role="button"]');
+        const handleHoverEnd = () => {
+            setHoverScale(1);
+            setIsHovering(false);
+        };
+
+        // เลือก element ที่มี data-cursor-scale
+        const interactiveElements = document.querySelectorAll('[data-cursor-scale]');
         interactiveElements.forEach(element => {
-            element.addEventListener('mouseenter', handleHoverStart);
+            element.addEventListener('mouseenter', handleHoverStart as EventListener);
             element.addEventListener('mouseleave', handleHoverEnd);
         });
 
@@ -46,9 +60,9 @@ export default function CursorTail() {
             if (cursorRef.current) {
                 let scale = 1;
                 if (isHovering && isClicking) {
-                    scale = 3; // ขนาดเมื่อชี้ปุ่มและคลิกค้าง
+                    scale = hoverScale * 1.5; // ขยายเพิ่มเมื่อคลิกค้าง
                 } else if (isHovering) {
-                    scale = 6; // ขนาดเมื่อชี้ปุ่ม
+                    scale = hoverScale;
                 } else if (isClicking) {
                     scale = 3; // ขนาดเมื่อคลิกค้าง
                 }
@@ -65,11 +79,11 @@ export default function CursorTail() {
             window.removeEventListener('mousedown', handleMouseDown);
             window.removeEventListener('mouseup', handleMouseUp);
             interactiveElements.forEach(element => {
-                element.removeEventListener('mouseenter', handleHoverStart);
+                element.removeEventListener('mouseenter', handleHoverStart as EventListener);
                 element.removeEventListener('mouseleave', handleHoverEnd);
             });
         };
-    }, [isHovering, isClicking]);
+    }, [isHovering, isClicking, hoverScale]);
 
     if (!mounted) return null;
 
