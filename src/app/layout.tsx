@@ -50,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lineSans.className} bg-gradient-to-b from-orange-50/30 to-transparent dark:from-orange-950/30`}>
+      <body className={`${lineSans.className} bg-gray-100 dark:bg-gradient-to-b dark:to-transparent dark:from-orange-950/30`}>
         <Providers>
           <Toaster richColors />
           <AOSProvider>
