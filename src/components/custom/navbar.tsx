@@ -32,7 +32,7 @@ export default function Navbar() {
                         <ThemeSwitcher  />
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="lg:hidden text-2xl"
+                            className="lg:hidden text-2xl text-black dark:text-white"
                         >
                             <RxHamburgerMenu />
                         </button>

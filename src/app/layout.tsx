@@ -16,7 +16,7 @@ const geistSans = localFont({
 
 const lineSans = localFont({
   src: "./fonts/LINESeedSansTH_W_Rg.woff",
-  variable: "--font-geist-sans",
+  variable: "--font-line-sans",
   weight: "100 900",
 });
 
@@ -50,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lineSans.className} dark:bg-black bg-white `}>
+      <body className={`${lineSans.className} bg-gradient-to-b from-orange-50/30 to-transparent dark:from-orange-950/30`}>
         <Providers>
           <Toaster richColors />
           <AOSProvider>
@@ -61,7 +61,7 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            <div className=" mt-28">
+            <div className=" mt-16">
               {children}
               <Footer />
             </div>
