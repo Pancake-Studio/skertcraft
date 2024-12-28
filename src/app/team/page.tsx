@@ -21,7 +21,7 @@ export default function Team() {
     ];
 
     return (
-        <div id="team" className="relative py-20 bg-gray-100 dark:bg-gradient-to-b dark:to-transparent dark:from-orange-950/30">
+        <div id="team" className="relative py-20">
             <div className="container mx-auto px-4">
                 <h2 
                     className="text-4xl md:text-5xl font-bold text-center mb-16 text-orange-600 dark:text-orange-400"
