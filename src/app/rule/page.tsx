@@ -59,7 +59,7 @@ export default function Rule() {
                     {/* Penalties Section */}
                     <div className="w-full lg:w-1/3">
                         <div
-                            className="bg-white/80 dark:bg-black/40 backdrop-blur-sm rounded-2xl p-6 shadow-lg"
+                            className="bg-white/80 dark:bg-black/40 rounded-2xl p-6 shadow-lg"
                             data-aos="fade-up"
                             data-aos-delay="200"
                         >
