@@ -15,7 +15,7 @@ export default function Navbar() {
         <>
             <div className="flex justify-center w-full">
                 <div className="flex items-center w-full max-w-[1600px] justify-between px-4 md:px-8 lg:px-[50px] py-4">
-                    <a href="#home">
+                    <a href="/">
                         <Image
                             data-aos="fade-right"
                             data-cursor-scale="10"

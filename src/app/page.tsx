@@ -3,8 +3,7 @@ import Image from "next/image";
 import { ZFTERMIN } from "@/app/fonts";
 import { FaCaretDown } from "react-icons/fa";
 
-
-export default async function Home() {
+export default function Home() {
   const details = [
     {
       title: "ระบบการเล่นแบบ Survival ผสม RPG",
@@ -47,37 +46,38 @@ export default async function Home() {
       ],
     },
   ];
+
   return (
     <>
-      <div id="home" className="relative h-screen w-full flex text-black dark:text-white">
-        <div className="left-1/2 top-[0px] -translate-x-1/2 w-full h-1/2 relative">
+      {/* Hero Section */}
+      <div id="home" className="relative h-screen w-full text-black dark:text-white">
+        {/* Background Image */}
+        <div className="relative h-full">
           <Image
             src="/lobby1.webp"
-            alt="alt"
-            width={1920}
-            height={1009}
-            className="object-cover object-center h-full w-full transition-opacity duration-300"
+            alt="Lobby Image"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            className="transition-opacity duration-300"
             data-aos="fade-in"
-            data-aos-duration="1500"
+            data-aos-duration="3000"
+            data-aos-delay="1500"
             loading="lazy"
             placeholder="blur"
             blurDataURL="..."
           />
 
-          {/* Hero Section Overlay */}
-          <div
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-black/90 to-transparent "
-          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70" />
 
-          {/* Hero Content */}
-          <div className="absolute inset-0 flex flex-col justify-center items-center gap-6">
+          {/* Content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
             <h1
               data-aos="zoom-in"
               data-aos-delay="200"
               data-cursor-scale="13"
-              className={`${ZFTERMIN.className} text-white text-5xl md:text-7xl lg:text-9xl font-bold drop-shadow-lg transition-all duration-300 hover:scale-105`}
+              className={`${ZFTERMIN.className} text-white text-5xl md:text-7xl lg:text-9xl font-bold drop-shadow-lg transition-transform duration-300 hover:scale-105`}
             >
               SkerCraft
             </h1>
@@ -85,32 +85,26 @@ export default async function Home() {
               data-aos="fade-up"
               data-aos-delay="400"
               data-cursor-scale="8"
-              className="text-orange-200 text-xs md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-green-200 to-blue-200 bg-clip-text text-transparent px-4 py-2 rounded-lg backdrop-blur-sm"
+              className="mt-4 text-orange-200 text-sm md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-green-200 to-blue-200 bg-clip-text text-transparent px-4 py-2 rounded-lg backdrop-blur-sm"
             >
               ยินดีต้อนรับเข้าสู่เซิร์ฟเวอร์ไมน์คราฟต์ของพวกเรา
             </h2>
+            <h3 data-aos="fade-up" data-aos-delay="800" className="text-sm md:text-xl lg:text-2xl font-bold flex items-center gap-2 text-white px-4 py-2 rounded-lg backdrop-blur-sm mt-5" data-cursor-scale="6">
+              <FaCaretDown className="animate-bounce" />
+              นายเลื่อนลงไปได้นะ
+            </h3>
           </div>
         </div>
-        <div
-          data-aos="fade-zoom-in"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-          className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black to-transparent"
-        />
+      </div>
 
-        {/* Server Status Section */}
-        <div className="absolute left-1/2 bottom-1/3 -translate-x-1/2 translate-y-2/3 z-50 w-[90%] max-w-7xl">
+      {/* Server Status Section */}
+      <div className="relative w-full -mt-20 z-10">
+        <div className="max-w-7xl mx-auto px-4">
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="flex flex-col md:flex-row items-center justify-between gap-8 p-8 bg-white/80 dark:bg-black/40 backdrop-blur-md rounded-xl shadow-lg"
+            className="bg-white dark:bg-[#19191b] rounded-xl shadow-lg p-8 flex flex-col md:flex-row items-center justify-center gap-8"
           >
-            <div className="flex flex-col gap-4">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold flex items-center gap-2" data-cursor-scale="6">
-                <FaCaretDown className="animate-bounce" />
-                นายเลื่อนลงไปได้นะ
-              </h3>
-            </div>
             <div className="flex flex-col gap-4" data-cursor-scale="6">
               <ServerStatusWrapper type="sv" />
               <ServerStatusWrapper type="player" />
@@ -120,24 +114,24 @@ export default async function Home() {
       </div>
 
       {/* Features Section */}
-      <div id="features" className="relative min-h-screen w-full py-20 px-6 md:px-10 text-black dark:text-white">
-        <div
-          data-aos="fade-up"
-          className="max-w-7xl mx-auto"
-        >
-          <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-12" data-cursor-scale="8">
+      <div id="features" className="relative w-full py-20 px-6 md:px-10 text-black dark:text-white">
+        <div data-aos="fade-up" className="max-w-7xl mx-auto">
+          <h1
+            className="text-3xl md:text-5xl font-bold mb-12 text-center"
+            data-cursor-scale="8"
+          >
             เซิร์ฟเวอร์ที่ดีที่สุดในประเทศไทย
           </h1>
 
-          <div className="grid md:grid-cols-2 gap-8 ">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {details.map((detail, index) => (
               <div
                 key={index}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
-                className="p-6 bg-white/80 dark:bg-black/40 backdrop-blur-sm rounded-xl shadow-lg transition-all duration-300"
+                className="p-6 bg-white dark:bg-[#19191b] rounded-xl shadow-lg transition-transform transform hover:scale-105"
               >
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4" data-cursor-scale="6">
+                <h2 className="text-xl md:text-2xl font-bold mb-4" data-cursor-scale="6">
                   {detail.title}
                 </h2>
                 <ul className="space-y-3">
@@ -145,8 +139,9 @@ export default async function Home() {
                     <li
                       key={idx}
                       data-cursor-scale="5"
-                      className="text-lg md:text-xl flex items-center gap-2 before:content-['•'] before:text-orange-400"
+                      className="text-lg flex items-center gap-2"
                     >
+                      <span className="text-orange-400">•</span>
                       {desc}
                     </li>
                   ))}
