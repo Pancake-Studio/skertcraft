@@ -39,8 +39,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "SkertCraft Network",
-  description: "A new minecraft server",
+  title: "SkerCraft Network | เซิร์ฟเวอร์ไมน์คราฟต์ของคนไทย",
+  description: "เซิร์ฟ มายคราฟ/ไมน์คราฟต์ ของคนไทย สังคมดี มีระบบที่หลากหลาย สนุกที่สุด ที่มีระบบการเล่นแบบ Survival ผสม RPG และมีระบบอัพเกรดตัวละคร ระบบการตีบวกไอเทม และมีโลกแห่งการผจญภัย พร้อมกิจกรรมในเซิร์ฟเวอร์ ร่วมมาเล่นกัน ",
 };
 
 export default function RootLayout({
