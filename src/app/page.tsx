@@ -103,7 +103,7 @@ export default function Home() {
           <div
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="bg-white dark:bg-[#19191b] rounded-xl shadow-lg p-8 flex flex-col md:flex-row items-center justify-center gap-8"
+            className="bg-white dark:bg-[#19191b] rounded-xl shadow-lg p-8 flex flex-col md:flex-row items-center justify-center gap-8 text-black dark:text-white"
           >
             <div className="flex flex-col gap-4" data-cursor-scale="6">
               <ServerStatusWrapper type="sv" />
