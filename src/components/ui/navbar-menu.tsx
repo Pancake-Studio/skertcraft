@@ -52,7 +52,7 @@ export const MenuItem = ({
                             <motion.div
                                 transition={transition}
                                 layoutId="active"
-                                className="drop-shadow-[0_0_20px_#a0a0a03d] bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                                className=" bg-white dark:bg-black rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
                             >
                                 <motion.div
                                     layout
